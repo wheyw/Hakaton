@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/editor.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-light">
+    <div class="container-fluid px-3 py-2">
+        <a class="d-flex align-items-center navbar-brand">
+            Image Editor
+        </a>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <!-- Панель инструментов -->
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" onclick="openCropMenu()">Crop</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="openResizeMenu()">Resize</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="openRotateMenu()">Rotate and Flip</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="openadjustMenu()">Adjust</a>
+                <a href="#" class="list-group-item list-group-item-action">Filters</a>
+            </div>
+            <div class="list-group mt-lg-2">
+                <a href="#" class="list-group-item list-group-item-action">Elements</a>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary w-100">Save</button>
+                <a href="index.html" class="btn btn-secondary w-100 mt-2">Cancel</a>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <!-- Область для редактирования изображения -->
+            <div class="card">
+                <canvas id="myCanvas"></canvas>
+            </div>
+        </div>
+        <div class="col-md-2 card">
+            <br>
+            <div id="cropMenu" class="d-none">
+                <h5>Crop ratio</h5>
+                <select id="cropRatio" class="form-select">
+                    <option value="1:1">1:1</option>
+                    <option value="16:9">16:9</option>
+                    <option value="4:3">4:3</option>
+                </select>
+                <button id="applyCrop" class="btn btn-primary mt-3 w-100">Apply</button>
+            </div>
+            <div id="resizeMenu" class="d-none">
+                <h5>Width</h5>
+                <input id="widthInput" type="number" class="form-control">
+                <h5 class="mt-lg-2">Heigh</h5>
+                <input id="heightInput" type="number" class="form-control">
+                <input id="proportions" name="proportions" type="checkbox" class="form-check-input mt-lg-3">
+                <label for="proportions" class="mt-lg-2">Constrain proportions</label>
+                <button id="applyResize" class="btn btn-primary mt-3 w-100">Apply</button>
+            </div>
+            <div id="rotateMenu" class="d-none">
+                <h5>Rotate</h5>
+                <div class="btn-group w-100">
+                    <button id="plusRotate" class="w-50 btn btn-outline-dark">+90 degree</button>
+                    <button id="minusRotate" class="w-50 btn btn-outline-dark">-90 degree</button>
+                </div>
+                <h5 class="mt-lg-2">Flip</h5>
+                <div class="btn-group w-100">
+                    <button id="vMirror" class="w-50 btn btn-outline-dark">Vertical</button>
+                    <button id="hMirror" class="w-50 btn btn-outline-dark">Horizontal</button>
+                </div>
+                <button id="applyRotate" class="btn btn-primary mt-3 w-100">Apply</button>
+            </div>
+            <div id="adjustMenu" class="d-none">
+                <h5>Brightness</h5>
+                <input id="brightness" type="range" class="form-range" min="0" max="200" value="100">
+                <h5>Contrast</h5>
+                <input id="contrast" type="range" class="form-range" min="0" max="200" value="100">
+                <h5>Saturation</h5>
+                <input id="satur" type="range" class="form-range" min="0" max="200" value="100">
+                <h5>Exposition</h5>
+                <input id="expo" type="range" class="form-range" min="0" max="200" value="100">
+                <button id="applyAdjust" class="btn btn-primary mt-3 w-100">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

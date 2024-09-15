@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="#" class="text-center p-5 border rounded" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <h5>Upload Image</h5>
+                </div>
+                <div class="mb-4 border border-dashed p-5" style="position: relative;">
+                    <input type="file" class="form-control-file position-absolute w-100 h-100 opacity-0" id="fileUpload" accept="image/*">
+                    <p id="errorMessage" class="text-danger"></p>
+                    <span>Drag & Drop or Select File</span>
+                    <p class="text-muted">Max file size: 5 MB, Formats: JPEG, PNG, GIF, SVG</p>
+                </div>
+                <img id="preview" class="img-thumbnail mt-3 d-none" alt="Image preview" style="max-width: 10%;">
+                <a href="editor.html" id="uploadBtn" type="submit" class="btn btn-primary mt-3 d-none">Edit image</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

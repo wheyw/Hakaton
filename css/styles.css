@@ -1,0 +1,15 @@
+.card {
+    max-width: 100vw;  /* Максимальная ширина 60% экрана */
+    height: 80vh; /* Максимальная высота 90% экрана */
+    overflow: revert;
+}
+#canvas {
+    width: 95%;
+    height: 95%;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Подгоняет изображение по размеру */
+}
